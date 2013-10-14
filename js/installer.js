@@ -10,16 +10,18 @@ var Installer = (function() {
       var url = evt.target.dataset.manifestUrl;
 
       if (mozApps) {
-        var request = window.navigator.mozApps.install(url);
+        var request = mozApps.install(url);
 
-        request.onsuccess = function() {
-          alert('Installation successful!');
-          request.onsuccess = request.onerror = null;
-        };
+        /*
+         * FOS shows this UI for us
+         *
+         *request.onsuccess = function() {
+         *  alert('Installation successful!');
+         *};
+         */
 
         request.onerror = function() {
           alert('Install failed, error: ' + this.error.name);
-          request.onsuccess = request.onerror = null;
         };
       } else {
         window.open(url, '_blank');
