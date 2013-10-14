@@ -35,3 +35,15 @@ p.description {
 .screenshots {
   text-align: center;
 }
+
+.screenshots img {
+  width: 33%;
+}
+
+section {
+  width: 100%;
+}
+
+.slide > header > h1 {
+  padding: 2px 15px;
+}
