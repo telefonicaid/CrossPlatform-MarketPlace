@@ -1,0 +1,49 @@
+
+section[role="region"] header h2 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* Tabs */
+.bottom[role="tablist"] {
+  margin: -5px 0px;
+}
+
+/* Selected state */
+[role="tablist"] > [role="tab"][aria-selected="true"] > a {
+  color: #62c6f5
+}
+
+[role="tablist"] > [role="tab"][aria-selected="true"] > a.icon:after {
+  background-position: center -40px;
+}
+
+/* Selected state */
+[role="tablist"][data-type="filter"] > [role="tab"][aria-selected="true"] {
+  background: #fff;
+  border: solid 1px #999;
+  border-top: none;
+  color: #000;
+}
+
+[role="tablist"][data-type="filter"] > [role="tab"]:first-child[aria-selected="true"] {
+  border-left: none;
+}
+
+[role="tablist"][data-type="filter"] > [role="tab"]:last-child[aria-selected="true"] {
+  border-right: none;
+}
+
+[role="tablist"][data-type="filter"] > [role="tab"][aria-selected="true"] > a {
+  color: #000;
+}
+
+[role="tablist"][data-type="filter"] > [role="tab"] > a:active {
+  background-color: #008aaa;
+  color: #fff;
+}
+
+section[role="region"].skin-organic > header.main:first-child,
+.skin-organic section[role="region"] > header.main:first-child {
+  background-image: url(../shared/bb/style/headers/images/ui/header.png);
+}

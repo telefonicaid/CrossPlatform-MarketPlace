@@ -1,0 +1,38 @@
+.start {
+  float: left;
+}
+
+.end {
+  float: right;
+}
+
+.slide {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100% - 108px);
+  transition: transform 0.3s ease;
+  -webkit-transition: -webkit-transform 0.3s ease;
+}
+
+.slide[data-viewport="right"] {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+}
+
+.slide[data-viewport="left"] {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+#navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#navigation button {
+  width: calc(50% - 10px);
+  margin: 10px 5px;
+}
