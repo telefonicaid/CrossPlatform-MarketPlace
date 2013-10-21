@@ -2,6 +2,16 @@
 
 var Installer = (function() {
 
+  var throbberClassList = document.getElementById('throbber').classList;
+
+  function showThrobber() {
+    throbberClassList.add('visible');
+  }
+
+  function hideThrobber() {
+    throbberClassList.remove('visible');
+  }
+
   var mozApps = window.navigator.mozApps;
 
   var buttons = document.querySelectorAll('menu[type="toolbar"] button');
@@ -10,17 +20,16 @@ var Installer = (function() {
       var url = evt.target.dataset.manifestUrl;
 
       if (mozApps) {
+        showThrobber();
+
         var request = mozApps.install(url);
 
-        /*
-         * FOS shows this UI for us
-         *
-         *request.onsuccess = function() {
-         *  alert('Installation successful!');
-         *};
-         */
+        request.onsuccess = function() {
+          hideThrobber();
+        };
 
         request.onerror = function() {
+          hideThrobber();
           alert('Install failed, error: ' + this.error.name);
         };
       } else {
