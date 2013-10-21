@@ -203,3 +203,5 @@ var CompactSlide = (function() {
 }());
 
 CompactSlide.init();
+
+window.scrollTo(0, 0);
