@@ -33,7 +33,7 @@ var Installer = (function() {
           alert('Install failed, error: ' + this.error.name);
         };
       } else {
-        window.open(url, '_blank');
+        window.open(url, '_top');
       }
     });
   }
